@@ -1,18 +1,27 @@
 
 
-# Build the image
+# Build the image, then list images
 
 ```
 docker build -t docker-jenkins .
+docker images
 ```
 
-# Launch an intance
+# Create a container, then list containers
 
 ```
-sudo docker run --name my-instance -i -t docker-jenkins
+docker run --name jenkins -i -t docker-jenkins
+docker ps -a
+docker inspect jenkins
 ```
 
-# Quit the container
+# Get container IP
+
+```
+docker inspect jenkins | grep IP
+```
+
+# Quit a container
 
 ```
 CTRL + P
